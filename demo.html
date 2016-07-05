@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>::Demo::</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.8.0.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".accord_data").hide();
+    $(".accord_data").first().show();
+    $(".accordian h1").first().addClass('active');
+    $(".accordian h1").on('click', function() {
+        var flag = false;
+        if ($(this).attr('class') == 'activeAll') {
+            $(this).removeClass('activeAll');
+            $(this).addClass('active');
+            $("h1.activeAll + .accord_data").slideUp();
+            $(".accordian h1").removeClass("activeAll");
+            flag = true;
+        }
+        if ($(this).attr('class') == 'active') {
+            if (flag === false) {
+                $("h1.active + .accord_data").slideUp();
+                $(".accordian h1").removeClass("active");
+            }
+        } 
+        else {
+            $(".accordian h1").removeClass("active");
+            $(".accord_data").slideUp();
+            if ($(this).attr('class') != 'active') {
+                $(this).addClass("active");
+            }
+            $("h1.active + .accord_data").slideDown();
+        }
+    });
+    $(".all_adapters").on('click', function() {
+        $(".accordian h1").removeClass("active");
+        $(".accordian h1").addClass("activeAll");
+        $(".accord_data").slideDown();
+    });
+});
+
+</script>
+
+
+</head>
+
+
+<body>
+<div class="accordian_container">
+	<div class="all_adapters">
+		<a href="#">See All Adapters <small> &raquo;</small></a>
+	</div>
+
+	<div class="accordian">
+		<h1>CRM <span><small>4</small></span></h1>
+		<div class="accord_data">
+			<div class="left_data">
+					<ul>
+						<li><span>Oracle Siebel</span></li>
+						<li><span>SugarCRM</span></li>
+						<li><span>DropboxR</span></li>
+						<li><span>SAP CRM</span></li>
+					</ul>
+			</div>
+		</div>
+		</div>
+		<div class="accordian">
+		<h1>ERP<span><small>6</small></span></h1>
+		<div class="accord_data">
+			<div class="left_data">
+				<ul>
+					<li><span>Oracle e-Business Suite</span></li>
+					<li><span>Oracle JDEdwards</span></li>
+					<li><span>Oracle Peoplesoft</span> </li>
+				</ul>
+			</div>
+			<div class="left_data">
+				<ul>
+					<li><span>SAP SRM </span></li>
+					<li><span>SAP ECC </span></li>
+					<li><span>SAP SCM</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="accordian">
+		<h1>APPSERVER <span><small>6</small></span></h1>
+		<div class="accord_data">
+			<div class="left_data">
+				<ul>
+					<li><span>IBM WebSphere MQ</span></li>
+					<li><span>Red Hat Jboss</span></li>
+					<li><span>Oracle App Server</span></li>
+				</ul>
+			</div>
+			<div class="left_data">
+				<ul>
+					<li><span>Sun Java System App Server</span></li>
+					<li><span>BEA WebLogic App Server</span></li>
+					<li><span>Tuxedo</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="accordian">
+		<h1>DATABASES<span><small>9</small></span></h1>
+		<div class="accord_data">
+			<div class="left_data">
+				<ul>
+					<li><span>EnterpriseDB</span></li>
+					<li><span>IBM DB2 UDB</span></li>
+					<li><span>Microsoft SQLServer</span></li>
+					<li><span>MsSQL</span></li>
+					<li><span>Oracle EMR</span></li>
+				</ul>
+			</div>
+			<div class="left_data">
+				<ul>
+					<li><span>PostgresDB</span></li>
+					<li><span>Sybase ASE</span></li>
+					<li><span>Teradata Database</span></li>
+					<li><span>Oracle Times Ten</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="accordian">
+		<h1>Directory Services<span><small>9</small></span></h1>
+		<div class="accord_data">
+			<div class="left_data">
+				<ul>
+					<li><span>IBM Tivoli </span></li>
+					<li><span>Microsoft Active Directory</span></li>
+					<li><span>Novell eDirectory</span></li>
+					<li><span>Oracle Directory Server</span></li>
+					<li><span>Sun Java System Directory</span></li>
+				</ul>
+			</div>
+			<div class="left_data">
+				<ul>
+					<li><span>Red Hat Directory Sesrver</span></li>
+					<li><span>Oracle Internet Directory</span></li>
+					<li><span>OpenLDAP</span></li>
+					<li><span>LDAP</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="accordian">
+		<h1>Big Data<span><small>7</small></span></h1>
+		<div class="accord_data">
+			<div class="left_data">
+				<ul>
+					<li><span>Hadoop</span></li>
+					<li><span>Hive</span></li>
+					<li><span>MapReduce</span></li>
+					<li><span>Pig</span></li>
+				</ul>
+			</div>
+			<div class="left_data">
+				<ul>
+					<li><span>Amazon Elastic MapReduce</span></li>
+					<li><span>CDH (Cloudera)</span></li>
+					<li><span>Hortonworks</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="accordian">
+		<h1>Technologies<span><small>9</small></span></h1>
+		<div class="accord_data">
+			<div class="left_data">
+				<ul>
+					<li><span>FTP</span></li>
+					<li><span>sFTP, sshFTP</span></li>
+					<li><span>REST/JSON</span></li>
+					<li><span>JMS</span></li>
+					<li><span>JDBC</span></li>
+				</ul>
+			</div>
+			<div class="left_data">
+				<ul>
+					<li><span>File</span></li>
+					<li><span>HTTP</span></li>
+					<li><span>SOAP</span></li>
+ 					<li><span>StreamingXML</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="accordian">
+		<h1>Cloud Applications<span><small>14</small></span></h1>
+		<div class="accord_data">
+			<div class="left_data">
+				<ul>
+					<li><span>Box</span></li>
+					<li><span>Dropbox</span></li>
+					<li><span>Evernote</span></li>
+					<li><span>Facebook</span></li>
+					<li><span>twitter</span></li>
+					<li><span>Flickr</span></li>
+					<li><span>Foresquare</span></li>
+				</ul>
+			</div>
+			<div class="left_data">
+				<ul>
+					<li><span>Getsatisfaction</span></li>
+					<li><span>Instagram</span></li>
+					<li><span>Linkedin</span></li>
+ 					<li><span>MailChimp</span></li>
+ 					<li><span>Tibbr</span></li>
+ 					<li><span>Yammer</span></li>
+ 					<li><span>Yelp</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="accordian">
+		<h1>Mainframe<span><small>10</small></span></h1>
+		<div class="accord_data">
+			<div class="left_data">
+				<ul>
+					<li><span>CICS/TS </span></li>
+					<li><span>DB2</span></li>
+					<li><span>WebSphere MQ </span></li>
+					<li><span>Data Conversion (COBOL, Copybook)</span></li>
+					<li><span>IMS</span></li>
+				</ul>
+			</div>
+			<div class="left_data">
+				<ul>
+					<li><span>Substation ES</span></li>
+					<li><span>Mainframe RED</span></li>
+					<li><span>Rendezvous</span></li>
+					<li><span>EMS Client for z/OS</span></li>
+					<li><span>Files</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="accordian">
+		<h1>Trading Partners<span><small>4</small></span></h1>
+		<div class="accord_data">
+			<div class="left_data">
+				<ul>
+					<li><span>EDI</span></li>
+					<li><span>RosettaNet (RNIF)</span></li>
+					<li><span>cXML transactions</span></li>
+					<li><span>eBXML transactions</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="accordian">
+		<h1>Trading Partners<span><small>5</small></span></h1>
+		<div class="accord_data">
+			<div class="left_data">
+				<ul>
+					<li><span>EDI</span></li>
+					<li><span>ICD-9 to ICD-10 conversion</span></li>
+					<li><span>Medicare</span></li>
+					<li><span>HIPAA</span></li>
+					<li><span>HL7</span></li> 	
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="accordian">
+		<h1>Others<span>7</span></h1>
+		<div class="accord_data">
+			<div class="left_data">
+				<ul>
+					<li><span>CMI</span></li>
+					<li><span>FTP</span></li>
+					<li><span>SSH</span></li>
+					<li><span>SOAP</span></li>
+				</ul>
+			</div>
+			<div class="left_data">
+				<ul>
+					<li><span>OSIsoft</span></li>
+					<li><span>DocuSign</span></li>
+					<li><span>CA Siteminder</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	</div>
+</body>
+
+</html>

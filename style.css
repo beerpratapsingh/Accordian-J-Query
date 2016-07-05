@@ -1,0 +1,81 @@
+.accordian_container{
+	width: 960px;
+	margin: 30px auto 0px;
+}
+.accordian_container .all_adapters{
+	width: 100%;
+	float: left;
+	background: #fff;
+	padding: 7px 0px;
+	margin-bottom: 15px;
+}
+.accordian_container .all_adapters a{
+	font-weight: 600;
+	font-size: 16px;
+	float: right;
+	margin-right: 5px;
+}
+.accordian_container .all_adaptesr a slall{
+	font-size: 16px;
+	font-style: normal;
+}
+.accordian_container .accordian .accord_data:first-child{
+	display: block !important;
+}
+.accordian_container .accordian{
+	width: 100%;
+	float: left;
+	padding:0px 0px 0px;
+	cursor: pointer;
+	margin-bottom: 15px;
+	background: #fff !important;
+}
+.accordian_container .accordian h1{
+	border: none !important;
+	padding: 12px 10px 12px !important;
+	margin: 0px !important;
+	font-size: 16px !important;
+}
+.accordian_container .accordian h1 span{
+	float: right;
+	padding: 3px 10px;
+	background: #0070AF;
+	color: #fff;
+}
+.accordian_container .accordian h1:hover span{
+
+	background-color: #ffb700;
+	background-image: url(plus-white.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.accordian_container .accordian h1:hover span small{
+	visibility: hidden;
+}
+.accordian_container .accordian h1.active span{
+	background-color: #0070AF;
+	color: #fff;
+	background-image: none;
+}
+.accordian_container .accordian h1.active span small{
+	display: block;
+	color: #fff;
+	visibility: visible;
+}
+.accord_data{
+	width: 100%;
+	float: left;
+	/*display: none;*/
+}
+.accord_data .left_data{
+	width: 50%;
+	float: left;
+}
+.left_data ul li{
+	color: #0070AF !important;
+	list-style-type: disc;
+	list-style-image: none !important;
+}
+.left_data ul li span{
+	color: #252525 !important;
+}

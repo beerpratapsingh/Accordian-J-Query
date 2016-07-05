@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accordian Demo</title>
+	<script type="text/javascript" src="jquery-1.8.1.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		/*function test(){
+			$(".sub-list").each(function(){
+				$(this).find("li:first-child").addClass("current_li").delay(2000).queue(function(next){
+					$(this).removeClass("current_li");
+					$(this).next().addClass("current_li");
+				});
+			});			
+		}
+*/
+		
+			var myInterval;
+			var myFun = function(){
+				var cur = $(".sub-list li.current_li");
+				if(cur.index() == $(".sub-list li").length - 1){
+					cur.removeClass(current_li);
+					$("sub-list li:first").addClass("current_li");
+				}else{
+					cur.removeClass("current_li").next().addClass("current_li");
+				}
+			}
+
+			clearInterval(myInterval);
+			myInterval = setInterval(myFun(),2000);
+
+			/*setInterval(function(){
+				myFun();
+			},2000);*/
+
+	});
+	</script>
+	<style type="text/css">
+	*{margin: 0; padding: 0}
+	li{list-style: none; display: inline-block; text-align: center;}
+	ul{width: 320px; float: left;}
+	h2{text-align: left;padding: 20px;display: block;}
+	div.hidden{height: 0; -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease; transition: all 0.5s ease; overflow: hidden;}
+	a{border: 2px solid #ccc;padding: 5px;text-decoration: none;text-align: center;display: block;}
+	a#list1:target + div.hidden{height: 150px}
+	a#list2:target + div.hidden{height: 100px}
+	a#list3:target + div.hidden{height: 100px}
+	p{text-align: left; padding: 5px 10px; float: left;}
+
+	.slider{float: left; margin: 0px 50px;}
+	.slider > ul > li{width:100px;float: left;}
+	.slider > ul > li > ul > li{display: none;}
+	.slider > ul > li > ul > li.current_li{float: left; display: block;}
+	</style>
+</head>
+<body>
+<h2>Acccordian demo</h2>
+<ul>
+	<li>
+	<a id="list1" href="#list1"><h3>Accordian list-1</h3></a>
+	<div class="hidden">
+		<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+	</div>
+	</li>
+	<li>
+	<a id="list2" href="#list2"><h3>Accordian list-2</h3></a>
+	<div class="hidden">
+		<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+	</div>
+	</li>
+	<li>
+	<a id="list3" href="#list3"><h3>Accordian list-3</h3></a>
+	<div class="hidden">
+		<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+	</div>
+	</li>
+</ul>
+
+<div class="slider">
+	<ul>
+		<li>
+			<ul class="sub-list">
+				<li>Image-1</li>
+				<li>Image-1</li>
+				<li>Image-1</li>
+			</ul>
+		</li>
+		<li>
+			<ul class="sub-list">
+				<li>Image-1</li>
+				<li>Image-1.2</li>
+				<li>Image-1.3</li>
+			</ul>
+		</li>
+		<li>
+			<ul class="sub-list">
+				<li>Image-1</li>
+				<li>Image-1.2</li>
+				<li>Image-1.3</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+</body>
+</html>
